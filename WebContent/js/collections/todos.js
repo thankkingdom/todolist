@@ -9,6 +9,10 @@ var TodoList = Backbone.Collection.extend({
 		});
 	},
 	remaining: function(){
+		// this: Reference to the collection.
+		// without: Undersocore.js 定義メソッド
+		// apply: javascript 組み込みメソッド
+		// 完了済みのTodo項目だけをフィルタリングして返す
 		return this.without.apply(this, this.completed());
 	},
 	nextOrder: function(){
