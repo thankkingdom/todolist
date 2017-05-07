@@ -89,10 +89,10 @@ app.AppView = Backbone.View.extend({
 
 	toggleAllComplete: function(){
 		var completed = this.allCheckbox.checked;
-
 		app.Todos.each(function(todo){
 			todo.save({
-				'completed': completed
+				// toggleするようにcompletedの値を変換させる
+				'completed': !completed
 			})
 		})
 	}
