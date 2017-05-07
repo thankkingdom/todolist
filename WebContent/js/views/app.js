@@ -45,6 +45,10 @@ app.AppView = Backbone.View.extend({
 			this.$main.hide();
 			this.$footer.hide();
 		}
+console.log(!remaining);
+//console.log(this.allCheckbox.checked);
+		//何のための処理か？
+		//終わっていないタスクがひとつでもあればallCheckboxはfalse
 		this.allCheckbox.checked = !remaining;
 	},
 
@@ -92,6 +96,7 @@ app.AppView = Backbone.View.extend({
 		app.Todos.each(function(todo){
 			todo.save({
 				// toggleするようにcompletedの値を変換させる
+				// サンプルでは、このようには記述されていなかった
 				'completed': !completed
 			})
 		})
